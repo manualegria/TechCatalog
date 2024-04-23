@@ -2,24 +2,24 @@
 
 @section('content')
     <div class="pagetitle">
-        <h1>Cities</h1>
+        <h1>Ciudades</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Home</a></li>
-                <li class="breadcrumb-item active">Cities</li>
+                <li class="breadcrumb-item active">Ciudades</li>
             </ol>
         </nav>
     </div>
 
-    <section class="section dashboard">
+    <section class="city dashboard">
 
         <div class="card">
 
             <div class="card-header py-3">
                 <div class="row">
-                    <h3 class="m-0 font-weight-bold text-primary col-md-11">Cities</h3>
+                    <h3 class="m-0 font-weight-bold text-primary col-md-11">Ciudades</h3>
                     <div class="col-md-1">
-                        <a href="{{ route('sections.create') }}" class="btn btn-primary"><i
+                        <a href="{{ route('cities.create') }}" class="btn btn-primary"><i
                                 class="bi bi-plus-circle"></i></a>
                     </div>
                 </div>
@@ -34,15 +34,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($sections as $section)
+                        @foreach ($cities as $city)
                             <tr>
-                                <td> {{ $section->name }} </td>
+                                <td> {{ $city->name }} </td>
                                 <td>
-                                    <a href="{{ route('sections.edit', $section->id) }}" class="btn btn-sm btn-warning"><i
+                                    <a href="{{ route('cities.edit', $city->id) }}" class="btn btn-sm btn-warning"><i
                                             class="bi bi-pencil-fill"></i></a>
 
 
-                                    <form action="{{ route('sections.delete', $section->id) }}" style="display:contents" method="POST">
+                                    <form action="{{ route('cities.delete', $city->id) }}" style="display:contents" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm btnDelete"><i
@@ -72,7 +72,7 @@
             event.preventDefault();
 
             Swal.fire({
-                title: "¿Desea eliminar la sección?",
+                title: "¿Desea eliminar la Ciudad?",
                 text: "No prodrá revertirlo",
                 icon: "question",
                 showCancelButton: true,
