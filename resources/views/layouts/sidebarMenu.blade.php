@@ -16,6 +16,13 @@
         </a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('cities.index') }}">
+          <i class="bi bi-grid"></i>
+          <span>Ciudades</span>
+        </a>
+      </li>
+
     </ul>
 
   </aside>
