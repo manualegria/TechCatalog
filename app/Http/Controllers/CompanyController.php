@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\city;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-class CitiesController extends Controller
+
+class CompanyController extends Controller
 {
     public function index(Request $request) {
         if(!empty($request-> records_per_page)) {
@@ -23,45 +24,45 @@ class CitiesController extends Controller
             $request->records_per_page = env('PAGINATION_DEFAULT_SIZE');
         }
 
-        $city = city::where('name', 'LIKE',"%$request->filter%")
+        $company = Company::where('name', 'LIKE',"%$request->filter%")
                     -> paginate($request->records_per_page);
 
-        return view('cities.index', ['cities' => $city, 'data' => $request]);
+        return view('companies.index', ['companies' => $company, 'data' => $request]);
     }
 
     public function create() {
 
-        return view('cities.create');
+        return view('companies.create');
     }
 
     public function edit($id) {
 
-        $city = city::find($id);
+        $company = Company::find($id);
 
-        if (empty($city)) {
+        if (empty($company)) {
 
-            Session::flash('message', ['content' => "La ciudad con id '$id' no existe", 'type' => 'error']);
-            return redirect()->action([CitiesController::class, 'index']);
+            Session::flash('message', ['content' => "La Empresa con id '$id' no existe", 'type' => 'error']);
+            return redirect()->action([CompanyController::class, 'index']);
         }
 
-        return view('cities.edit', ['city' => $city]);
+        return view('companies.edit', ['company' => $company]);
     }
 
     public function delete($id) {
 
         try {
 
-            $city = city::find($id);
+            $company = Company::find($id);
 
-            if (empty($city)) {
+            if (empty($company)) {
 
-                Session::flash('message', ['content' => "La Ciudad con id '$id' no existe", 'type' => 'error']);
+                Session::flash('message', ['content' => "La Empresa con id '$id' no existe", 'type' => 'error']);
             }
 
-            $city->delete();
+            $company->delete();
 
-            Session::flash('message', ['content' => 'Ciudad eliminada con éxito', 'type' => 'success']);
-            return redirect()->action([CitiesController::class, 'index']);
+            Session::flash('message', ['content' => 'Empresa eliminada con éxito', 'type' => 'success']);
+            return redirect()->action([CompanyController::class, 'index']);
 
         } catch(Exception $ex) {
 
@@ -84,13 +85,14 @@ class CitiesController extends Controller
 
         try {
 
-            $city = new city();
-            $city->name = $request->name;
+            $company = new Company();
+            $company->name = $request->name;
+            $company->nit = $request->nit;
 
-            $city->save();
+            $company->save();
 
-            Session::flash('message', ['content' => 'Ciudad creada con éxito', 'type' => 'success']);
-            return redirect()->action([CitiesController::class, 'index']);
+            Session::flash('message', ['content' => 'Empresa creada con éxito', 'type' => 'success']);
+            return redirect()->action([CompanyController::class, 'index']);
 
         } catch(Exception $ex) {
 
@@ -100,35 +102,36 @@ class CitiesController extends Controller
         }
     }
 
+    
     public function update(Request $request) {
 
         try {
             Validator::make($request->all(), [
 
-                'city_id' => 'required|numeric|min:1',
+                'company_id' => 'required|numeric|min:1',
                 'name' => 'required|max:64',
             ],
             [
-                'city_id.required' => 'El city_id es obligatorio.',
-                'city_id.numeric' => 'El city_id debe ser un número.',
-                'city_id.min' => 'El city_id no puede ser menor a :min.',
+                'company_id.required' => 'El company_id es obligatorio.',
+                'company_id.numeric' => 'El company_id debe ser un número.',
+                'company_id.min' => 'El company_id no puede ser menor a :min.',
                 'name.required' => 'El nombre es obligatorio.',
                 'name.max' => 'El nombre no puede ser mayor a :max caracteres.',
             ])->validate();
 
-            $city = city::find($request->city_id);
+            $company = Company::find($request->company_id);
 
-            if (empty($city)) {
+            if (empty($company)) {
 
-                Session::flash('message', ['content' => "La Ciudad con id '$request->city_id' no existe", 'type' => 'error']);
-               return redirect()->action([CitiesController::class, 'index']);
+                Session::flash('message', ['content' => "La Empresa con id '$request->company_id' no existe", 'type' => 'error']);
+               return redirect()->action([CompanyController::class, 'index']);
             }
 
-            $city->name = $request->name;
-            $city->save();
+            $company->name = $request->name;
+            $company->save();
 
-            Session::flash('message', ['content' => 'Ciudad editada con éxito', 'type' => 'success']);
-            return redirect()->action([CitiesController::class, 'index']);;
+            Session::flash('message', ['content' => 'Emoresa editada con éxito', 'type' => 'success']);
+            return redirect()->action([CompanyController::class, 'index']);;
 
         } catch(Exception $ex) {
 
@@ -137,4 +140,5 @@ class CitiesController extends Controller
             return redirect()->back();
         }
     }
+
 }

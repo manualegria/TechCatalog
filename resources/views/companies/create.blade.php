@@ -4,12 +4,12 @@
 @section('content')
 
     <div class="pagetitle">
-        <h1>Ciudades</h1>
+        <h1>Empresas</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('cities.index') }}">Ciudades</a></li>
-                <li class="breadcrumb-item active">Nueva Ciudad</li>
+                <li class="breadcrumb-item"><a href="{{ route('companies.index') }}">Empresas</a></li>
+                <li class="breadcrumb-item active">Nueva Empresa</li>
             </ol>
         </nav>
     </div>
@@ -20,19 +20,21 @@
 
             <div class="card-body">
 
-                <h5 class="card-title">Nueva Ciudad</h5>
+                <h5 class="card-title">Nueva Empresa</h5>
 
-                <form class="row g-3" action="{{ route('cities.store')}}" method="POST">
+                <form class="row g-3" action="{{ route('companies.store')}}" method="POST">
                     @csrf
                     <div class="col-md-12">
                         <div class="form-floating">
-                            <input name="name" class="form-control" placeholder="ciudad">
-                            <label>Ciudad</label>
+                            <input name="name" class="form-control" placeholder="Empresa">
+                            <label>Empresa</label>
+                            <input name="nit" class="form-control" placeholder="Nit">
+
                         </div>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        <a href="{{ route('cities.index')}}" class="btn btn-secondary">Volver</a>
+                        <a href="{{ route('companies.index')}}" class="btn btn-secondary">Volver</a>
                     </div>
                 </form>
 
