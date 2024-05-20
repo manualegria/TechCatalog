@@ -8,7 +8,7 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('sections.index') }}">Ciudades</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('cities.index') }}">Ciudades</a></li>
                 <li class="breadcrumb-item active">Nueva Ciudad</li>
             </ol>
         </nav>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        <a href="{{ route('sections.index')}}" class="btn btn-secondary">Volver</a>
+                        <a href="{{ route('cities.index')}}" class="btn btn-secondary">Volver</a>
                     </div>
                 </form>
 
