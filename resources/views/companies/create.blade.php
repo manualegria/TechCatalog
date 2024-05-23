@@ -28,8 +28,13 @@
                         <div class="form-floating">
                             <input name="name" class="form-control" placeholder="Empresa">
                             <label>Empresa</label>
+                    
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
                             <input name="nit" class="form-control" placeholder="Nit">
-
+                            <label>Nit</label>
                         </div>
                     </div>
                     <div class="text-center">
