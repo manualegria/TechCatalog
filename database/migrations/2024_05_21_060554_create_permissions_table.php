@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cities', function (Blueprint $table) {
+        Schema::create('permissions', function (Blueprint $table) {
             $table->id();
             $table->string('name', 64);
-            $table->boolean('is_hidden')->default(false);
-            $table->boolean('estado')->default(true);
+            $table->string('description', 256);
+            $table->string('module',64);
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cities');
+        Schema::dropIfExists('permissions');
     }
 };
