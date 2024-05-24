@@ -27,3 +27,4 @@ Route::get('/', [HomeController::class, 'index'])
 
 include('web/cities.php');
 include('web/companies.php');
+include('web/roles.php');
