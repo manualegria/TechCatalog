@@ -21,12 +21,7 @@ require __DIR__.'/auth.php';
 
 
 
-Route::get('/', [HomeController::class, 'index'])
-->name('home.index')
-->middleware(AuthorizedMiddleware::class );
 
 include('web/cities.php');
 include('web/companies.php');
-include('web/campuses.php');
 include('web/roles.php');
-include('web/users.php');
