@@ -29,5 +29,5 @@ Route::put('/cities/update', [CitiesController::class, 'update'])
 
 Route::delete('/cities/delete/{id}', [CitiesController::class, 'delete'])
 ->name('cities.delete')
-->middleware(AuthorizedMiddleware::class . ':Cities.deleteCpmanies');
+->middleware(AuthorizedMiddleware::class . ':Cities.deleteCities');
 
