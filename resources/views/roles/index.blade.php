@@ -11,7 +11,7 @@
         </nav>
     </div>
 
-    <section class="role dashboard">
+    <section class="section dashboard">
 
         <div class="card">
 
@@ -29,7 +29,7 @@
 
                 <form class="navbar-search" method="GET" action="{{ route('roles.index')}}" >
 
-                <div class="row mt-3">
+                    <div class="row mt-3">
                         <div class="col-md-auto">
 
                             <select class="form-select bg-light border-0 small" value="{{ $data->records_per_page }}" name="records_per_page">
@@ -61,7 +61,9 @@
 
                         </div>
                     </div>
-            </form>
+
+                </form>
+
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -95,12 +97,9 @@
                     <ul class="pagination justify-content-center">
 
                         {{ $roles->appends(request()->except('page'))->links('vendor.pagination.custom') }}
-                        
 
                     </ul>
                   </nav>
-
-
 
             </div>
 
@@ -119,7 +118,7 @@
             event.preventDefault();
 
             Swal.fire({
-                title: "¿Desea eliminar la Ciudad?",
+                title: "¿Desea eliminar el rol?",
                 text: "No prodrá revertirlo",
                 icon: "question",
                 showCancelButton: true,
