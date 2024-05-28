@@ -21,17 +21,17 @@ class PermissionSeeder extends Seeder
             ["name" => "updateCities", "description" => "Editar Ciudades", "module" => "Cities"],
             ["name" => "deleteCpmanies", "description" => "Eliminar Ciudades", "module" => "Cities"],
 
-            // // Empresas
-            // ["name" => "showCompanies", "description" => "Ver Empresas", "module" => "Companies"],
-            // ["name" => "creteCompanies", "description" => "Crear Empresas", "module" => "Companies"],
-            // ["name" => "updateCompanies", "description" => "Editar Empresas", "module" => "Companies"],
-            // ["name" => "deleteCpmanies", "description" => "Eliminar Empresas", "module" => "Companies"],
+        // Sedes
+            ["name" => "showCampuses", "description" => "Ver Sedes", "module" => "Campuses"],
+            ["name" => "creteCampuses", "description" => "Crear Sedes", "module" => "Campuses"],
+            ["name" => "updateCampuses", "description" => "Editar Sedes", "module" => "Campuses"],
+            ["name" => "deleteCampuses", "description" => "Eliminar Sedes", "module" => "Campuses"],
 
         //     // Roles
-        //     ["name" => "showRoles", "description" => "Ver Roles", "module" => "Roles"],
-        //     ["name" => "createRoles", "description" => "Crear Roles", "module" => "Roles"],
-        //     ["name" => "updateRoles", "description" => "Editar Roles", "module" => "Roles"],
-        //     ["name" => "deleteRoles", "description" => "Eliminar Roles", "module" => "Roles"],
+            ["name" => "showRoles", "description" => "Ver Roles", "module" => "Roles"],
+            ["name" => "createRoles", "description" => "Crear Roles", "module" => "Roles"],
+            ["name" => "updateRoles", "description" => "Editar Roles", "module" => "Roles"],
+            ["name" => "deleteRoles", "description" => "Eliminar Roles", "module" => "Roles"],
 
          //   Usuarios
             ["name" => "showUsers", "description" => "Ver Usuarios", "module" => "Users"],

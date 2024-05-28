@@ -24,7 +24,24 @@
             </li>
         @endif
 
-      
+        @if(\App\Helpers\RoleHelper::isAuthorized('Campuses.showCampuses'))
+            <li class="nav-item">
+                <a class="nav-link {{ !str_contains($currentUrl, 'campus') ? 'collapsed' : '' }}" href="{{ route('campus.index') }}">
+                <i class="bi bi-shield-lock"></i>
+                <span>Sedes</span>
+                </a>
+            </li>
+        @endif
+
+        @if(\App\Helpers\RoleHelper::isAuthorized('Roles.showRoles'))
+            <li class="nav-item">
+                <a class="nav-link {{ !str_contains($currentUrl, 'roles') ? 'collapsed' : '' }}" 
+                href="{{ route('roles.index') }}">
+                <i class="bi bi-shield-lock"></i>
+                <span>Roles</span>
+                </a>
+            </li>
+        @endif
    
     </ul>
 
