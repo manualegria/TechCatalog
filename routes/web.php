@@ -25,3 +25,4 @@ require __DIR__.'/auth.php';
 include('web/cities.php');
 include('web/companies.php');
 include('web/roles.php');
+include('web/campuses.php');
