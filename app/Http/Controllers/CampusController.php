@@ -48,7 +48,7 @@ class CampusController extends Controller
             return redirect()->action([CampusController::class, 'index']);
         }
 
-        return view('campuses.edit', ['campuses' => $campus]);
+        return view('campus.edit', ['campuses' => $campus]);
     }
 
     public function delete($id) {

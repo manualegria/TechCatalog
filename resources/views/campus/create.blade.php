@@ -31,7 +31,7 @@
                 </div>
             @endif -->
 
-            <form class="row g-3" action="{{ route('campuses.store')}}" method="POST">
+            <form class="row g-3" action="{{ route('campus.store')}}" method="POST">
                 @csrf
                 <div class="col-md-12">
                     <div class="form-floating">

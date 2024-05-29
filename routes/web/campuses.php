@@ -5,7 +5,7 @@ use App\Http\Middleware\AuthorizedMiddleware;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/campuses', [CampusController::class, 'index'])
+Route::get('/campus', [CampusController::class, 'index'])
      ->name('campus.index')
      ->middleware(AuthorizedMiddleware::class . ':Campuses.showCampueses');
 
@@ -14,18 +14,18 @@ Route::get('/campuses/create', [CampusController::class, 'create'])
      ->middleware(AuthorizedMiddleware::class . ':Campuses.createCampueses');
 
 Route::get('/campuses/edit/{id}', [CampusController::class, 'edit'])
-     ->name('campuses.edit')
+     ->name('campus.edit')
      ->middleware(AuthorizedMiddleware::class . ':Campuses.updateCampueses');
 
 Route::post('/campuses/store', [CampusController::class, 'store'])
-     ->name('campuses.store')
+     ->name('campus.store')
      ->middleware(AuthorizedMiddleware::class . ':Campuses.createCampueses');
 
 Route::put('/campuses/update', [CampusController::class, 'update'])
-     ->name('campuses.update')
+     ->name('campus.update')
      ->middleware(AuthorizedMiddleware::class, ':Campuses.updateCampueses');
 
      Route::delete('/campuses/delete/{id}', [CampusController::class, 'delete'])
-->name('campuses.delete')
+->name('campus.delete')
 ->middleware(AuthorizedMiddleware::class . ':campuses.deleteCampuses');
 
