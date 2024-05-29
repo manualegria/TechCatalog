@@ -21,7 +21,7 @@ require __DIR__.'/auth.php';
 
 
 
-
+include('web/home.php');
 include('web/cities.php');
 include('web/companies.php');
 include('web/roles.php');
