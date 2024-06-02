@@ -3,53 +3,69 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Section;
+use App\Models\Area;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-class SectionsController extends Controller
+class AreaController extends Controller
 {
-    public function index() {
-
-        $sections = Section::all();
-        return view('sections.index', ['sections' => $sections]);
+    public function index(Request $request) {
+        $records_per_page = $request->input('records_per_page', env('PAGINATION_DEFAULT_SIZE'));
+    
+        if ($records_per_page > env('PAGINATION_MAX_SIZE')) {
+            $records_per_page = env('PAGINATION_MAX_SIZE');
+        }
+    
+        $filter = $request->input('filter', '');
+    
+        $areas = Area::where('name', 'LIKE', "%{$filter}%")
+                     ->paginate($records_per_page);
+    
+        // Crear un objeto data con los valores necesarios
+        $data = (object) [
+            'records_per_page' => $records_per_page,
+            'filter' => $filter
+        ];
+    
+        return view('Areas.index', ['areas' => $areas, 'data' => $data]);
     }
+    
 
     public function create() {
 
-        return view('sections.create');
+        return view('areas.create');
     }
 
     public function edit($id) {
 
-        $section = Section::find($id);
+        $area = Area::find($id);
 
-        if (empty($section)) {
+        if (empty($area)) {
 
-            Session::flash('message', ['content' => "La sección con id '$id' no existe", 'type' => 'error']);
-            return redirect()->action([SectionsController::class, 'index']);
+            Session::flash('message', ['content' => "El Area con id '$id' no existe", 'type' => 'error']);
+            return redirect()->action([AreaController::class, 'index']);
         }
 
-        return view('sections.edit', ['section' => $section]);
+        return view('area.edit', ['area' => $area]);
     }
 
     public function delete($id) {
 
         try {
 
-            $section = Section::find($id);
+            $area = Area::find($id);
 
-            if (empty($section)) {
+            if (empty($area)) {
 
-                Session::flash('message', ['content' => "La sección con id '$id' no existe", 'type' => 'error']);
+                Session::flash('message', ['content' => "El Area con id '$id' no existe", 'type' => 'error']);
             }
 
-            $section->delete();
+            $area->delete();
 
-            Session::flash('message', ['content' => 'Sección eliminada con éxito', 'type' => 'success']);
-            return redirect()->action([SectionsController::class, 'index']);
+            Session::flash('message', ['content' => 'Area eliminada con éxito', 'type' => 'success']);
+            return redirect()->action([AreaController::class, 'index']);
 
         } catch(Exception $ex) {
 
@@ -72,13 +88,13 @@ class SectionsController extends Controller
 
         try {
 
-            $section = new Section();
-            $section->name = $request->name;
+            $area = new Area();
+            $area->name = $request->name;
 
-            $section->save();
+            $area->save();
 
-            Session::flash('message', ['content' => 'Sección creada con éxito', 'type' => 'success']);
-            return redirect()->action([SectionsController::class, 'index']);
+            Session::flash('message', ['content' => 'Area creada con éxito', 'type' => 'success']);
+            return redirect()->action([AreaController::class, 'index']);
 
         } catch(Exception $ex) {
 
@@ -93,30 +109,30 @@ class SectionsController extends Controller
         try {
             Validator::make($request->all(), [
 
-                'section_id' => 'required|numeric|min:1',
+                'area_id' => 'required|numeric|min:1',
                 'name' => 'required|max:64',
             ],
             [
-                'section_id.required' => 'El section_id es obligatorio.',
-                'section_id.numeric' => 'El section_id debe ser un número.',
-                'section_id.min' => 'El section_id no puede ser menor a :min.',
+                'area_id.required' => 'El area_id es obligatorio.',
+                'area_id.numeric' => 'El area_id debe ser un número.',
+                'area_id.min' => 'El area_id no puede ser menor a :min.',
                 'name.required' => 'El nombre es obligatorio.',
                 'name.max' => 'El nombre no puede ser mayor a :max caracteres.',
             ])->validate();
 
-            $section = Section::find($request->section_id);
+            $area = area::find($request->area_id);
 
-            if (empty($section)) {
+            if (empty($area)) {
 
-                Session::flash('message', ['content' => "La sección con id '$request->section_id' no existe", 'type' => 'error']);
-                return redirect()->action([SectionsController::class, 'index']);
+                Session::flash('message', ['content' => "La sección con id '$request->area_id' no existe", 'type' => 'error']);
+                return redirect()->action([AreaController::class, 'index']);
             }
 
-            $section->name = $request->name;
-            $section->save();
+            $area->name = $request->name;
+            $area->save();
 
             Session::flash('message', ['content' => 'Sección editada con éxito', 'type' => 'success']);
-            return redirect()->action([SectionsController::class, 'index']);;
+            return redirect()->action([AreaController::class, 'index']);;
 
         } catch(Exception $ex) {
 

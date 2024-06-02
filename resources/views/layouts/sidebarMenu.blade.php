@@ -27,7 +27,7 @@
         @if(\App\Helpers\RoleHelper::isAuthorized('Campuses.showCampuses'))
             <li class="nav-item">
                 <a class="nav-link {{ !str_contains($currentUrl, 'campus') ? 'collapsed' : '' }}" href="{{ route('campus.index') }}">
-                <i class="bi bi-shield-lock"></i>
+                <i class="ri-community-line"></i>
                 <span>Sedes</span>
                 </a>
             </li>
@@ -37,8 +37,38 @@
             <li class="nav-item">
                 <a class="nav-link {{ !str_contains($currentUrl, 'roles') ? 'collapsed' : '' }}" 
                 href="{{ route('roles.index') }}">
-                <i class="bi bi-shield-lock"></i>
+                <i class="ri-door-open-fill"></i>
                 <span>Roles</span>
+                </a>
+            </li>
+        @endif
+
+        @if(\App\Helpers\RoleHelper::isAuthorized('Companies.showRoles'))
+            <li class="nav-item">
+                <a class="nav-link {{ !str_contains($currentUrl, 'roles') ? 'collapsed' : '' }}" 
+                href="{{ route('companies.index') }}">
+                <i class="ri-building-2-fill"></i>
+                <span>Empresas</span>
+                </a>
+            </li>
+        @endif
+
+        @if(\App\Helpers\RoleHelper::isAuthorized('Usuarios.showUsers'))
+            <li class="nav-item">
+                <a class="nav-link {{ !str_contains($currentUrl, 'roles') ? 'collapsed' : '' }}" 
+                href="{{ route('users.index') }}">
+                <i class="ri-account-circle-fill"></i>
+                <span>Usuarios</span>
+                </a>
+            </li>
+        @endif
+
+        @if(\App\Helpers\RoleHelper::isAuthorized('Areas.showAreas'))
+            <li class="nav-item">
+                <a class="nav-link {{ !str_contains($currentUrl, 'roles') ? 'collapsed' : '' }}" 
+                href="{{ route('Areas.index') }}">
+                <i class="ri-account-circle-fill"></i>
+                <span>Areas</span>
                 </a>
             </li>
         @endif

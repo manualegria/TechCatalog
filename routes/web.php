@@ -26,3 +26,5 @@ include('web/cities.php');
 include('web/companies.php');
 include('web/roles.php');
 include('web/campuses.php');
+include('web/users.php');
+include('web/areas.php');

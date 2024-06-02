@@ -2,24 +2,24 @@
 
 @section('content')
     <div class="pagetitle">
-        <h1>Sedes</h1>
+        <h1>Areas</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Home</a></li>
-                <li class="breadcrumb-item active">Sedes</li>
+                <li class="breadcrumb-item active">Areas</li>
             </ol>
         </nav>
     </div>
 
-    <section class="campuses dashboard">
+    <section class="areas dashboard">
 
         <div class="card">
 
             <div class="card-header py-3">
                 <div class="row">
-                    <h3 class="m-0 font-weight-bold text-primary col-md-11">Sedes</h3>
+                    <h3 class="m-0 font-weight-bold text-primary col-md-11">Areas</h3>
                     <div class="col-md-1">
-                        <a href="{{ route('campus.create') }}" class="btn btn-primary"><i
+                        <a href="{{ route('area.create') }}" class="btn btn-primary"><i
                                 class="bi bi-plus-circle"></i></a>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
 
             <div class="card-body">
 
-                <form class="navbar-search" method="GET" action="{{ route('campus.index')}}" >
+                <form class="navbar-search" method="GET" action="{{ route('Areas.index')}}" >
 
                 <div class="row mt-3">
                         <div class="col-md-auto">
@@ -70,15 +70,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($campuses as $campus)
+                        @foreach ($areas as $area)
                             <tr>
-                                <td> {{ $campus->name }} </td>
+                                <td> {{ $area->name }} </td>
                                 <td>
-                                    <a href="{{ route('campus.edit', $campus->id) }}" class="btn btn-sm btn-warning"><i
+                                    <a href="{{ route('area.edit', $area->id) }}" class="btn btn-sm btn-warning"><i
                                             class="bi bi-pencil-fill"></i></a>
 
 
-                                    <form action="{{ route('campus.delete', $campus->id) }}" style="display:contents" method="POST">
+                                    <form action="{{ route('area.delete', $area->id) }}" style="display:contents" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm btnDelete"><i
@@ -94,7 +94,7 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
 
-                        {{ $campuses->appends(request()->except('page'))->links('vendor.pagination.custom') }}
+                        {{ $areas->appends(request()->except('page'))->links('vendor.pagination.custom') }}
                         
 
                     </ul>
@@ -119,7 +119,7 @@
             event.preventDefault();
 
             Swal.fire({
-                title: "¿Desea eliminar la Sede?",
+                title: "¿Desea eliminar la Ciudad?",
                 text: "No prodrá revertirlo",
                 icon: "question",
                 showCancelButton: true,

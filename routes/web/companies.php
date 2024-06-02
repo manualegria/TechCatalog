@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\RolesController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Middleware\AuthorizedMiddleware;
 use Illuminate\Support\Facades\Route;
 
