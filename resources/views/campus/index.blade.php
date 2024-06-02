@@ -74,11 +74,11 @@
                             <tr>
                                 <td> {{ $campus->name }} </td>
                                 <td>
-                                    <a href="{{ route('campuses.edit', $campus->id) }}" class="btn btn-sm btn-warning"><i
+                                    <a href="{{ route('campus.edit', $campus->id) }}" class="btn btn-sm btn-warning"><i
                                             class="bi bi-pencil-fill"></i></a>
 
 
-                                    <form action="{{ route('campuses.delete', $campus->id) }}" style="display:contents" method="POST">
+                                    <form action="{{ route('campus.delete', $campus->id) }}" style="display:contents" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm btnDelete"><i

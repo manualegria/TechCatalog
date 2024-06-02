@@ -87,12 +87,12 @@ class CampusController extends Controller
         [
             'name.required' => 'El nombre es obligatorio.',
             'name.max' => 'El nombre no puede ser mayor a :max caracteres.',
-        //     'address.required' => 'La dirección es obligatoria.',
-        //     'address.max' => 'La dirección no puede ser mayor a :max caracteres.',
-        //     'company_id.required' => 'La empresa es obligatoria.',
-        //     'company_id.exists' => 'La empresa seleccionada no es válida.',
-        //     'city_id.required' => 'La ciudad es obligatoria.',
-        //     'city_id.exists' => 'La ciudad seleccionada no es válida.',
+            'address.required' => 'La dirección es obligatoria.',
+            'address.max' => 'La dirección no puede ser mayor a :max caracteres.',
+            'company_id.required' => 'La empresa es obligatoria.',
+            'company_id.exists' => 'La empresa seleccionada no es válida.',
+            'city_id.required' => 'La ciudad es obligatoria.',
+            'city_id.exists' => 'La ciudad seleccionada no es válida.',
          ])->validate();
 
         try {
@@ -138,7 +138,7 @@ class CampusController extends Controller
             if (empty($campus)) {
 
                 Session::flash('message', ['content' => "La Sede con id '$request->campus_id' no existe", 'type' => 'error']);
-               return redirect()->action([campusesController::class, 'index']);
+               return redirect()->action([CampusController::class, 'index']);
             }
 
             $campus->name = $request->name;

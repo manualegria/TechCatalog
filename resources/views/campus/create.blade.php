@@ -61,7 +61,7 @@
                     <div class="col-md-6">
                         <div class="form-floating">
 
-                            <select class="form-control" name="company_id">
+                            <select class="form-control" name="city_id">
                                 @foreach ($cities as $City)
                                     <option value="{{ $City->id }}">{{ $City->name }}</option>
                                 @endforeach

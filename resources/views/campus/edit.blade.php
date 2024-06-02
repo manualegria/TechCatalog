@@ -19,17 +19,17 @@
 
             <div class="card-body">
 
-                <h5 class="card-title">Editar Empresa</h5>
+                <h5 class="card-title">Editar Sede</h5>
 
-                <form class="row g-3" action="{{ route('campuses.update')}}" method="POST">
+                <form class="row g-3" action="{{ route('campus.update')}}" method="POST">
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="campus_id" value="{{ $campus->id }}" />
 
                     <div class="col-md-12">
                         <div class="form-floating">
-                            <input name="name" class="form-control" placeholder="Empresa" value="{{ $campus->name }}">
-                            <label>Empresa</label>
+                            <input name="name" class="form-control" placeholder="Sede" value="{{ $campus->name }}">
+                            <label>Sede</label>
                         </div>
                     </div>
                     <div class="text-center">
