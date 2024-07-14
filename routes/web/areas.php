@@ -28,4 +28,3 @@ Route::put('/areas/update', [AreaController::class, 'update'])
      Route::delete('/areas/delete/{id}', [AreaController::class, 'delete'])
 ->name('area.delete')
 ->middleware(AuthorizedMiddleware::class . ':Areas.deleteAreas');
-

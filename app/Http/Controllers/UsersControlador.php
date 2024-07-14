@@ -64,8 +64,7 @@ class UsersController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'document' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'email' => 'required|email',
             'role_id' => 'required|exists:roles,id',
         ],
         [
@@ -74,7 +73,6 @@ class UsersController extends Controller
             'document.required' => 'El documento es requerido.',
             'email.required' => 'El Correo es requerido.',
             'email.email' => 'El Correo debe ser un campo válido.',
-            'password.required' => 'La contraseña es requerida.',
             'role_id.required' => 'El rol es requerido.',
             'role_id.exists' => 'El id dado para el rol no existe.',
         ])->validate();
@@ -87,7 +85,7 @@ class UsersController extends Controller
             $user->document = $request->document;
             $user->email = $request->email;
             $user->email_verified_at = now();
-            $user->password = Hash::make($request->password);
+            $user->password = Hash::make($request->document);
             $user->role_id = $request->role_id;
 
             $user->save();

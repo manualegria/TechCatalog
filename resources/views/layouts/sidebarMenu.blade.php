@@ -15,19 +15,19 @@
             </a>
         </li>
 
-        @if(\App\Helpers\RoleHelper::isAuthorized('Cities.showCities'))
+        @if(\App\Helpers\RoleHelper::isAuthorized('Ciudades.showCities'))
             <li class="nav-item">
                 <a class="nav-link {{ !str_contains($currentUrl, 'cities') ? 'collapsed' : '' }}" href="{{ route('cities.index') }}">
-                <i class="bi bi-puzzle"></i>
+                <i class="ri-map-pin-fill"></i>
                 <span>Ciudades</span>
                 </a>
             </li>
         @endif
 
-        @if(\App\Helpers\RoleHelper::isAuthorized('Campuses.showCampuses'))
+        @if(\App\Helpers\RoleHelper::isAuthorized('Sedes.showCampuses'))
             <li class="nav-item">
                 <a class="nav-link {{ !str_contains($currentUrl, 'campus') ? 'collapsed' : '' }}" href="{{ route('campus.index') }}">
-                <i class="ri-community-line"></i>
+                <i class="ri-home-2-fill"></i>
                 <span>Sedes</span>
                 </a>
             </li>
@@ -43,7 +43,7 @@
             </li>
         @endif
 
-        @if(\App\Helpers\RoleHelper::isAuthorized('Companies.showRoles'))
+        @if(\App\Helpers\RoleHelper::isAuthorized('Empresas.showCompanies'))
             <li class="nav-item">
                 <a class="nav-link {{ !str_contains($currentUrl, 'roles') ? 'collapsed' : '' }}" 
                 href="{{ route('companies.index') }}">
@@ -57,7 +57,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ !str_contains($currentUrl, 'roles') ? 'collapsed' : '' }}" 
                 href="{{ route('users.index') }}">
-                <i class="ri-account-circle-fill"></i>
+                <i class="ri-team-fill"></i>
                 <span>Usuarios</span>
                 </a>
             </li>
@@ -69,6 +69,16 @@
                 href="{{ route('Areas.index') }}">
                 <i class="ri-account-circle-fill"></i>
                 <span>Areas</span>
+                </a>
+            </li>
+        @endif
+
+        @if(\App\Helpers\RoleHelper::isAuthorized('Equipos.showEquipos'))
+            <li class="nav-item">
+                <a class="nav-link {{ !str_contains($currentUrl, 'roles') ? 'collapsed' : '' }}" 
+                href="{{ route('equipos.index') }}">
+                <i class="ri-angularjs-fill"></i>
+                <span>Equipos</span>
                 </a>
             </li>
         @endif

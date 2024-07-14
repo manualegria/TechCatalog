@@ -48,7 +48,7 @@ class AreaController extends Controller
             return redirect()->action([AreaController::class, 'index']);
         }
 
-        return view('area.edit', ['area' => $area]);
+        return view('areas.edit', ['area' => $area]);
     }
 
     public function delete($id) {
