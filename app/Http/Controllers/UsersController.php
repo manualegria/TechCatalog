@@ -87,7 +87,7 @@ class UsersController extends Controller
             $user->document = $request->document;
             $user->email = $request->email;
             $user->email_verified_at = now();
-            $user->password = Hash::make($request->document);
+            $user->password = Hash::make($request->password);
             $user->role_id = $request->role_id;
 
             $user->save();
