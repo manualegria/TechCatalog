@@ -8,26 +8,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/cities', [CitiesController::class, 'index'])
 ->name('cities.index')
-->middleware(AuthorizedMiddleware::class . ':Cities.showCities');
+->middleware(AuthorizedMiddleware::class . ':Ciudades.showCities');
 
 Route::get('/cities/create', [CitiesController::class, 'create'])
 ->name('cities.create')
-->middleware(AuthorizedMiddleware::class . ':Cities.creteCities');
+->middleware(AuthorizedMiddleware::class . ':Ciudades.creteCities');
 
 Route::get('/cities/edit/{id}', [CitiesController::class, 'edit'])
 ->name('cities.edit')
-->middleware(AuthorizedMiddleware::class . ':Cities.updateCities');
+->middleware(AuthorizedMiddleware::class . ':Ciudades.updateCities');
 
 
 Route::post('/cities/store', [CitiesController::class, 'store'])
 ->name('cities.store')
-->middleware(AuthorizedMiddleware::class . ':Cities.creteCities');
+->middleware(AuthorizedMiddleware::class . ':Ciudades.creteCities');
 
 Route::put('/cities/update', [CitiesController::class, 'update'])
 ->name('cities.update')
-->middleware(AuthorizedMiddleware::class . ':Cities.updateCities');
+->middleware(AuthorizedMiddleware::class . ':Ciudades.updateCities');
 
 Route::delete('/cities/delete/{id}', [CitiesController::class, 'delete'])
 ->name('cities.delete')
-->middleware(AuthorizedMiddleware::class . ':Cities.deleteCities');
+->middleware(AuthorizedMiddleware::class . ':Ciudades.deleteCities');
 
