@@ -22,7 +22,7 @@ class UserRoleSeeder extends Seeder
         $adminRole->save();
 
         // cities role
-        $citiesPermissions = Permission::where('module', '=', 'cities')
+        $citiesPermissions = Permission::where('module', '=', 'Ciudades')
                                       ->get();
 
         $citiesRole = new Role();
@@ -37,8 +37,24 @@ class UserRoleSeeder extends Seeder
             $rolePermission->save();
         }
 
+            // equipos role
+        $EquiposPermissions = Permission::where('module', '=', 'Equipos')
+                                      ->get();
+
+        $EquiposRole = new Role();
+        $EquiposRole->name = "Editor de Equipos";
+        $EquiposRole->save();
+
+        foreach($EquiposPermissions as $permission) {
+
+             $rolePermission = new RolePermission();
+             $rolePermission->role_id = $EquiposRole->id;
+             $rolePermission->permission_id = $permission->id;
+             $rolePermission->save();
+             }
+
         // // campus role
-        $campusesPermissions = Permission::where('module', '=', 'campuses')
+        $campusesPermissions = Permission::where('module', '=', 'Sedes')
                                           ->get();
         $campusesRole = new Role();
         $campusesRole->name = "Editor de Sedes";
@@ -51,6 +67,21 @@ class UserRoleSeeder extends Seeder
             $rolePermission->permission_id = $permission->id;
             $rolePermission->save();
         }
+
+        // copany role
+            $companiesPermissions = Permission::where('module', '=', 'Empresas')
+                                           ->get();
+            $companiesRole = new Role();
+            $companiesRole->name = "Editor de Empresas";
+            $companiesRole->save();
+
+         foreach($companiesPermissions as $permission) {
+
+            $rolePermission = new RolePermission();
+            $rolePermission->role_id = $companiesRole->id;
+            $rolePermission->permission_id = $permission->id;
+            $rolePermission->save();
+            }
 
         // Content manager role
          $editorPermissions = $citiesPermissions->merge($campusesPermissions);
@@ -65,7 +96,7 @@ class UserRoleSeeder extends Seeder
             $rolePermission->role_id = $editorRole->id;
             $rolePermission->permission_id = $permission->id;
             $rolePermission->save();
-        }
+        } 
 
        // Users
 
@@ -96,7 +127,7 @@ class UserRoleSeeder extends Seeder
         $user->email = "anad@yopmail.com";
         $user->email_verified_at = now();
         $user->password = Hash::make('1234');
-        $user->role_id = $campusesRole->id;
+        $user->role_id = $EquiposRole->id;
         $user->save();
     }
 }
