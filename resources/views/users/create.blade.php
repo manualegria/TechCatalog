@@ -31,7 +31,8 @@
 
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input name="password" name="password" class="form-control" placeholder="password..." required >
+                            <!-- <input name="password" name="password" class="form-control" placeholder="Password..." required > -->
+                            <input type="password" name="password" class="form-control"  placeholder="Password" >
                             <label>Password</label>
                         </div>
                     </div>
