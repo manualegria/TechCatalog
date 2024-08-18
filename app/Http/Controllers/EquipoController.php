@@ -158,6 +158,11 @@ class EquipoController extends Controller
               
             ])->validate();
 
+<<<<<<< Updated upstream
+=======
+
+            $equipo = equipos::find($request->equipo_id);
+>>>>>>> Stashed changes
             $equipo = equipo::find($request->equipo_id);
 
             if (empty($equipo)) {
@@ -166,6 +171,11 @@ class EquipoController extends Controller
                return redirect()->action([EquipoController::class, 'index']);
             }
 
+<<<<<<< Updated upstream
+=======
+
+            $equipo->area_id = $request->area_id;
+>>>>>>> Stashed changes
             $equipo->company_id = $request->area_id;
             $equipo->campuses_id = $request->campuses_id;
             $equipo->specifications = $request->specifications;
