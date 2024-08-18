@@ -143,13 +143,10 @@ class CampusController extends Controller
 
             $campus->name = $request->name;
             $campus->address = $request->address;
-            $campus->company_id = $request->company_id;
-            $campus->city_id = $request->city_id;
-            $campus->status = $request->status;
             $campus->save();
 
             Session::flash('message', ['content' => 'Sede editada con éxito', 'type' => 'success']);
-            return redirect()->action([campusesController::class, 'index']);;
+            return redirect()->action([CampusController::class, 'index']);;
 
         } catch(Exception $ex) {
 
