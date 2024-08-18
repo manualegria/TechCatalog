@@ -29,11 +29,7 @@ Route::post('/equipos/store', [EquipoController::class, 'store'])
 
 Route::put('/equipos/update', [EquipoController::class, 'update'])
  ->name('equipos.update')
-<<<<<<< Updated upstream
- ->middleware(AuthorizedMiddleware::class, ':Equipos.updateEquipos');
-=======
  ->middleware(AuthorizedMiddleware::class . ':Equipos.updateEquipos');
->>>>>>> Stashed changes
 
  Route::delete('/equipos/delete/{id}', [EquipoController::class, 'delete'])
 ->name('equipos.delete')

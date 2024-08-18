@@ -23,12 +23,7 @@ Route::post('/campuses/store', [CampusController::class, 'store'])
 
 Route::put('/campuses/update', [CampusController::class, 'update'])
      ->name('campus.update')
-<<<<<<< Updated upstream
-     ->middleware(AuthorizedMiddleware::class, ':Sedes.updateCampuses');
-=======
-          ->middleware(AuthorizedMiddleware::class . ':Sedes.updateCampuses');
-
->>>>>>> Stashed changes
+     ->middleware(AuthorizedMiddleware::class . ':Sedes.updateCampuses');
 
      Route::delete('/campuses/delete/{id}', [CampusController::class, 'delete'])
 ->name('campus.delete')

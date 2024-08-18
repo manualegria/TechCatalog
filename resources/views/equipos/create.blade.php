@@ -98,9 +98,6 @@
                         <input name="price" class="form-control" placeholder="Precio" value="{{ old('price') }}" required>
                         <label>Precio</label>
                     </div>
-<<<<<<< Updated upstream
-=======
-
                 </div> 
                 <div class="w-100"></div>
 
@@ -109,8 +106,6 @@
                         <input name="type_peripheral" class="form-control" placeholder="Tipo del Periférico" value="{{ old('type_peripheral') }}" required>
                         <label>Tipo del Periférico</label>
                     </div>
-
->>>>>>> Stashed changes
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
@@ -123,24 +118,15 @@
                         <input name="brand_peripheral" class="form-control" placeholder="Marca del Periférico" value="{{ old('brand_peripheral') }}" required>
                         <label>Marca del Periférico</label>
                     </div>
-<<<<<<< Updated upstream
-=======
-
                 </div>    
-
->>>>>>> Stashed changes
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
                         <input name="type_peripheral" class="form-control" placeholder="Tipo del Periférico" value="{{ old('type_peripheral') }}" required>
                         <label>Tipo del Periférico</label>
                     </div>
-<<<<<<< Updated upstream
                 </div>
-              
-=======
                 </div>    
->>>>>>> Stashed changes
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a href="{{ route('equipos.index')}}" class="btn btn-secondary">Volver</a>

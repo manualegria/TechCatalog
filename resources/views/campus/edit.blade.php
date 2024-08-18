@@ -25,12 +25,7 @@
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="campus_id" value="{{ $campuses->id }}" />
-<<<<<<< Updated upstream
-=======
                     <input type="hidden" name="campus_id" value="{{ $campuses->id }}" />
-
->>>>>>> Stashed changes
-
                     <div class="col-md-12">
                         <div class="form-floating">
                             <input name="name" class="form-control" placeholder="Sede" value="{{ $campuses->name }}">
