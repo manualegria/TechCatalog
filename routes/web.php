@@ -28,3 +28,5 @@ include('web/roles.php');
 include('web/campuses.php');
 include('web/users.php');
 include('web/areas.php');
+include('web/equipos.php');
+
