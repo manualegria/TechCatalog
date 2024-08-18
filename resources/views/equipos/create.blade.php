@@ -98,6 +98,7 @@
                         <input name="price" class="form-control" placeholder="Precio" value="{{ old('price') }}" required>
                         <label>Precio</label>
                     </div>
+<<<<<<< HEAD
                 </div> 
                 <div class="w-100"></div>
 
@@ -106,6 +107,8 @@
                         <input name="type_peripheral" class="form-control" placeholder="Tipo del Periférico" value="{{ old('type_peripheral') }}" required>
                         <label>Tipo del Periférico</label>
                     </div>
+=======
+>>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
@@ -118,7 +121,17 @@
                         <input name="brand_peripheral" class="form-control" placeholder="Marca del Periférico" value="{{ old('brand_peripheral') }}" required>
                         <label>Marca del Periférico</label>
                     </div>
+<<<<<<< HEAD
                 </div>    
+=======
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input name="type_peripheral" class="form-control" placeholder="Tipo del Periférico" value="{{ old('type_peripheral') }}" required>
+                        <label>Tipo del Periférico</label>
+                    </div>
+                </div>
+>>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
               
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Guardar</button>

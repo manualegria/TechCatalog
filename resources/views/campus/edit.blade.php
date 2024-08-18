@@ -25,7 +25,10 @@
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="campus_id" value="{{ $campuses->id }}" />
+<<<<<<< HEAD
                     <input type="hidden" name="campus_id" value="{{ $campuses->id }}" />
+=======
+>>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
 
                     <div class="col-md-12">
                         <div class="form-floating">

@@ -29,7 +29,11 @@ Route::post('/equipos/store', [EquipoController::class, 'store'])
 
 Route::put('/equipos/update', [EquipoController::class, 'update'])
  ->name('equipos.update')
+<<<<<<< HEAD
  ->middleware(AuthorizedMiddleware::class . ':Equipos.updateEquipos');
+=======
+ ->middleware(AuthorizedMiddleware::class, ':Equipos.updateEquipos');
+>>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
 
  Route::delete('/equipos/delete/{id}', [EquipoController::class, 'delete'])
 ->name('equipos.delete')
