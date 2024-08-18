@@ -159,8 +159,16 @@ class EquipoController extends Controller
             ])->validate();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             $equipo = equipos::find($request->equipo_id);
 =======
+=======
+<<<<<<< Updated upstream
+=======
+
+            $equipo = equipos::find($request->equipo_id);
+>>>>>>> Stashed changes
+>>>>>>> emirDev
             $equipo = equipo::find($request->equipo_id);
 >>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
 
@@ -171,8 +179,16 @@ class EquipoController extends Controller
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             $equipo->area_id = $request->area_id;
 =======
+=======
+<<<<<<< Updated upstream
+=======
+
+            $equipo->area_id = $request->area_id;
+>>>>>>> Stashed changes
+>>>>>>> emirDev
             $equipo->company_id = $request->area_id;
 >>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
             $equipo->campuses_id = $request->campuses_id;

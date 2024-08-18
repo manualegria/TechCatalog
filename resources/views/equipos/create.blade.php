@@ -99,6 +99,12 @@
                         <label>Precio</label>
                     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> emirDev
                 </div> 
                 <div class="w-100"></div>
 
@@ -107,8 +113,13 @@
                         <input name="type_peripheral" class="form-control" placeholder="Tipo del Periférico" value="{{ old('type_peripheral') }}" required>
                         <label>Tipo del Periférico</label>
                     </div>
+<<<<<<< HEAD
 =======
 >>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
+=======
+
+>>>>>>> Stashed changes
+>>>>>>> emirDev
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
@@ -122,17 +133,30 @@
                         <label>Marca del Periférico</label>
                     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 </div>    
 =======
+=======
+<<<<<<< Updated upstream
+=======
+
+                </div>    
+
+>>>>>>> Stashed changes
+>>>>>>> emirDev
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
                         <input name="type_peripheral" class="form-control" placeholder="Tipo del Periférico" value="{{ old('type_peripheral') }}" required>
                         <label>Tipo del Periférico</label>
                     </div>
+<<<<<<< Updated upstream
                 </div>
 >>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
               
+=======
+                </div>    
+>>>>>>> Stashed changes
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a href="{{ route('equipos.index')}}" class="btn btn-secondary">Volver</a>

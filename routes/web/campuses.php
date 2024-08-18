@@ -24,10 +24,19 @@ Route::post('/campuses/store', [CampusController::class, 'store'])
 Route::put('/campuses/update', [CampusController::class, 'update'])
      ->name('campus.update')
 <<<<<<< HEAD
+<<<<<<< HEAD
      ->middleware(AuthorizedMiddleware::class . ':Sedes.updateCampuses');
 =======
      ->middleware(AuthorizedMiddleware::class, ':Sedes.updateCampuses');
 >>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
+=======
+<<<<<<< Updated upstream
+     ->middleware(AuthorizedMiddleware::class, ':Sedes.updateCampuses');
+=======
+          ->middleware(AuthorizedMiddleware::class . ':Sedes.updateCampuses');
+
+>>>>>>> Stashed changes
+>>>>>>> emirDev
 
      Route::delete('/campuses/delete/{id}', [CampusController::class, 'delete'])
 ->name('campus.delete')
