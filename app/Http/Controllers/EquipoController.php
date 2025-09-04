@@ -109,7 +109,7 @@ class EquipoController extends Controller
             'brand.required' => 'El serial es obligatorio.',
             'model.required' => 'La dirección es obligatoria.',
             'area_id.required' => 'La empresa es obligatoria.',
-            'campuses_id.required' => 'La ciudad es obligatoria.',
+            'campuses_id.required' => 'La sede es obligatoria.',
            
          ])->validate();
 
@@ -157,8 +157,19 @@ class EquipoController extends Controller
                 'equipo_id.min' => 'El equipo_id no puede ser menor a :min.',
               
             ])->validate();
+<<<<<<< HEAD
             $equipo = equipos::find($request->equipo_id);
+=======
+
+
+            $equipo = equipos::find($request->equipo_id);
+
+
+            $equipo = equipos::find($request->equipo_id);
+
+>>>>>>> main
             $equipo = equipo::find($request->equipo_id);
+
 
             if (empty($equipo)) {
 
@@ -166,8 +177,18 @@ class EquipoController extends Controller
                return redirect()->action([EquipoController::class, 'index']);
             }
 
+<<<<<<< HEAD
             $equipo->area_id = $request->area_id;
+=======
+
+            $equipo->area_id = $request->area_id;
+
+
+            $equipo->area_id = $request->area_id;
+
+>>>>>>> main
             $equipo->company_id = $request->area_id;
+
             $equipo->campuses_id = $request->campuses_id;
             $equipo->specifications = $request->specifications;
             $equipo->owner = $request->owner;

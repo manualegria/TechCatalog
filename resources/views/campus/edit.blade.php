@@ -25,11 +25,26 @@
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="campus_id" value="{{ $campuses->id }}" />
+<<<<<<< HEAD
                     <input type="hidden" name="campus_id" value="{{ $campuses->id }}" />
+=======
+
+                    <input type="hidden" name="campus_id" value="{{ $campuses->id }}" />
+
+                    <input type="hidden" name="campus_id" value="{{ $campuses->id }}" />
+
+
+>>>>>>> main
                     <div class="col-md-12">
                         <div class="form-floating">
                             <input name="name" class="form-control" placeholder="Sede" value="{{ $campuses->name }}">
                             <label>Sede</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input name="address" class="form-control" placeholder="Sede" value="{{ $campuses->address }}">
+                            <label>Direccion</label>
                         </div>
                     </div>
                     <div class="text-center">

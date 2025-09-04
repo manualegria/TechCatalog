@@ -132,6 +132,7 @@ class UsersController extends Controller
             $user->document = $request->document;
             $user->role_id = $request->role_id;
 
+
             $user->save();
 
             Session::flash('message', ['content' => 'Usuario creado con éxito', 'type' => 'success']);

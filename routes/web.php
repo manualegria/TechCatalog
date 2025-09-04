@@ -19,6 +19,17 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+use App\Http\Controllers\AccountController;
+
+Route::get('/login', [AccountController::class, 'login'])->name('login');
+Route::post('/login', [AccountController::class, 'loginPost']);
+
+Route::get('/register', [AccountController::class, 'register'])->name('register');
+Route::post('/register', [AccountController::class, 'registerPost']);
+
+Route::post('/logout', [AccountController::class, 'logout'])->name('logout');
+
+
 
 
 include('web/home.php');
@@ -29,4 +40,5 @@ include('web/campuses.php');
 include('web/users.php');
 include('web/areas.php');
 include('web/equipos.php');
+include('web/employees.php');
 

@@ -82,6 +82,16 @@
                 </a>
             </li>
         @endif
+
+        @if(\App\Helpers\RoleHelper::isAuthorized('Empleados.showEmployees'))
+            <li class="nav-item">
+                <a class="nav-link {{ !str_contains($currentUrl, 'roles') ? 'collapsed' : '' }}" 
+                href="{{ route('employees.index') }}">
+                <i class="ri-account-circle-fill"></i>
+                <span>Empleados</span>
+                </a>
+            </li>
+        @endif
    
     </ul>
 
