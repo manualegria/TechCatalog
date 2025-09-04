@@ -22,6 +22,21 @@
             html: '<ul>@foreach ($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>'
         });
     </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (typeof tinymce !== 'undefined') {
+            tinymce.init({
+                selector: 'textarea.tinymce', // Solo convierte los <textarea class="tinymce">
+                height: 300,
+                menubar: false,
+                plugins: 'link image code',
+                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+            });
+        }
+    });
+</script>
+
 @endif
 
 @if (session()->has('message'))

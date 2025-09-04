@@ -109,7 +109,7 @@ class EquipoController extends Controller
             'brand.required' => 'El serial es obligatorio.',
             'model.required' => 'La dirección es obligatoria.',
             'area_id.required' => 'La empresa es obligatoria.',
-            'campuses_id.required' => 'La ciudad es obligatoria.',
+            'campuses_id.required' => 'La sede es obligatoria.',
            
          ])->validate();
 
@@ -158,19 +158,14 @@ class EquipoController extends Controller
               
             ])->validate();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            $equipo = equipos::find($request->equipo_id);
-=======
-=======
-<<<<<<< Updated upstream
-=======
 
             $equipo = equipos::find($request->equipo_id);
->>>>>>> Stashed changes
->>>>>>> emirDev
+
+
+            $equipo = equipos::find($request->equipo_id);
+
             $equipo = equipo::find($request->equipo_id);
->>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
+
 
             if (empty($equipo)) {
 
@@ -178,19 +173,14 @@ class EquipoController extends Controller
                return redirect()->action([EquipoController::class, 'index']);
             }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            $equipo->area_id = $request->area_id;
-=======
-=======
-<<<<<<< Updated upstream
-=======
 
             $equipo->area_id = $request->area_id;
->>>>>>> Stashed changes
->>>>>>> emirDev
+
+
+            $equipo->area_id = $request->area_id;
+
             $equipo->company_id = $request->area_id;
->>>>>>> 99ecfd50afcf39f13f0a5898d7f4a7693d72cea5
+
             $equipo->campuses_id = $request->campuses_id;
             $equipo->specifications = $request->specifications;
             $equipo->owner = $request->owner;

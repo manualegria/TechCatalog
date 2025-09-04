@@ -56,6 +56,12 @@ class PermissionSeeder extends Seeder
             ["name" => "updateCompanies", "description" => "Editar Empresas", "module" => "Empresas"],
             ["name" => "deleteCompanies", "description" => "Eliminar Empresas", "module" => "Empresas"],
             
+                     // Empleados
+                     ["name" => "showEmployees", "description" => "Ver Emplados", "module" => "Empleados"],
+                     ["name" => "createEmpoloyees", "description" => "Crear Emplados", "module" => "Empleados"],
+                     ["name" => "updateEmpoloyees", "description" => "Editar Emplados", "module" => "Empleados"],
+                     ["name" => "deleteEmpoloyees", "description" => "Eliminar Emplados", "module" => "Empleados"],
+                     
          ];
 
         foreach($list as $item) {

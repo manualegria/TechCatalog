@@ -26,6 +26,9 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('theme/css/style.css') }}" rel="stylesheet">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
     <!-- =======================================================
     * Template Name: NiceAdmin
     * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/

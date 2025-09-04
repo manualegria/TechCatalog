@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up(): void0
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
@@ -22,6 +22,11 @@ return new class extends Migration
             $table->string('serial_peripheral', 50);
             $table->string('brand_peripheral', 50);
             $table->string('type_peripheral', 50);
+            $table->string('model_peripheral', 50);
+            $table->string('observaciones', 50);
+            $table->string('caracteristicas', 50);
+            $table->string('cargo', 50);
+            $table->string('disponibilidda', 50);
             $table->unsignedBigInteger('area_id');
             $table->unsignedBigInteger('campuses_id');
             $table->decimal('price', 10, 2);
