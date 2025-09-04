@@ -145,7 +145,7 @@
                             </tbody>
                         </table>
                     </div>
-<<<<<<< HEAD
+
                 </div> 
                 <div class="w-100"></div>
 
@@ -176,7 +176,7 @@
                 </div>
                 </div>    
                 <div class="text-center">
-=======
+
                     
                     <button type="button" class="btn btn-success btn-sm mt-2" id="addPeripheral">
                         <i class="bi bi-plus-circle"></i> Agregar otro periférico
@@ -184,7 +184,7 @@
                 </div>
 
                 <div class="text-center mt-4">
->>>>>>> main
+
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a href="{{ route('equipos.index')}}" class="btn btn-secondary">Volver</a>
                 </div>
