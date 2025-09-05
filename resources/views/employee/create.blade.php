@@ -270,48 +270,6 @@
                     </div>
                 </div>
             
-               
-                
-                <!-- <div class="col-md-6">
-                    <div class="form-floating">
-                        <input name="departamento_residencia" type="text" class="form-control" placeholder="Departamento de Residencia" value="{{ old('departamento_residencia') }}" required>
-                        <label>Departamento de Residencia</label>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <input name="ciudad_residencia" type="text" class="form-control" placeholder="Ciudad de Residencia" value="{{ old('ciudad_residencia') }}" required>
-                        <label>Ciudad de Residencia</label>
-                    </div>
-                </div> -->
-                
-                <!-- Información Académica -->
-                <!-- <div class="col-md-6">
-                    <div class="form-floating">
-                        <input name="nivel_academico" type="text" class="form-control" placeholder="Nivel Académico" value="{{ old('nivel_academico') }}" required>
-                        <label>Nivel Académico</label>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="col-md-6">
-                    <div class="form-floating">
-                        <input name="profesion" type="text" class="form-control" placeholder="Profesión" value="{{ old('profesion') }}" required>
-                        <label>Profesión</label>
-                    </div>
-                </div> -->
-                
-              
-<!--                 
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <input name="fondo_pension" type="text" class="form-control" placeholder="Fondo de Pensión" value="{{ old('fondo_pension') }}" required>
-                        <label>Fondo de Pensión</label>
-                    </div>
-                </div> -->
-                
-                
-            
                 
                 <div class="col-md-6">
                     <div class="form-floating">

@@ -41,6 +41,24 @@ class EmpleadoController extends Controller
             ]
         ]);
     }
+
+    public function search(Request $request)
+    {
+        $term = $request->get('term');
+        $users = User::where('first_name', 'like', "%$term%")
+                     ->orWhere('last_name', 'like', "%$term%")
+                     ->get(['id', 'first_name', 'last_name']);
+    
+        return response()->json(
+            $users->map(function ($user) {
+                return [
+                    'label' => $user->first_name . ' ' . $user->last_name,
+                    'value' => $user->first_name . ' ' . $user->last_name
+                ];
+            })
+        );
+    }
+    
     
 
     public function create(){

@@ -21,17 +21,12 @@ Route::post('/campuses/store', [CampusController::class, 'store'])
     ->middleware(AuthorizedMiddleware::class . ':Sedes.createCampuses');
 
 Route::put('/campuses/update', [CampusController::class, 'update'])
-<<<<<<< HEAD
      ->name('campus.update')
      ->middleware(AuthorizedMiddleware::class . ':Sedes.updateCampuses');
 
      Route::delete('/campuses/delete/{id}', [CampusController::class, 'delete'])
 ->name('campus.delete')
 ->middleware(AuthorizedMiddleware::class . ':Sedes.deleteCampuses');
-=======
-    ->name('campus.update')
-    ->middleware(AuthorizedMiddleware::class . ':Sedes.updateCampuses');
->>>>>>> main
 
 Route::delete('/campuses/delete/{id}', [CampusController::class, 'delete'])
     ->name('campus.delete')

@@ -25,17 +25,13 @@ Route::post('/equipos/store', [EquipoController::class, 'store'])
     ->middleware(AuthorizedMiddleware::class . ':Equipos.createEpuipos');
 
 Route::put('/equipos/update', [EquipoController::class, 'update'])
-<<<<<<< HEAD
  ->name('equipos.update')
  ->middleware(AuthorizedMiddleware::class . ':Equipos.updateEquipos');
 
  Route::delete('/equipos/delete/{id}', [EquipoController::class, 'delete'])
 ->name('equipos.delete')
 ->middleware(AuthorizedMiddleware::class . ':Equipos.deleteEpuipos');
-=======
-    ->name('equipos.update')
-    ->middleware(AuthorizedMiddleware::class . ':Equipos.updateEquipos');
->>>>>>> main
+
 
 Route::delete('/equipos/delete/{id}', [EquipoController::class, 'delete'])
     ->name('equipos.delete')

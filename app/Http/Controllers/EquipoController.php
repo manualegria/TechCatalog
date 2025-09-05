@@ -157,17 +157,17 @@ class EquipoController extends Controller
                 'equipo_id.min' => 'El equipo_id no puede ser menor a :min.',
               
             ])->validate();
-<<<<<<< HEAD
-            $equipo = equipos::find($request->equipo_id);
-=======
-
 
             $equipo = equipos::find($request->equipo_id);
 
 
+
             $equipo = equipos::find($request->equipo_id);
 
->>>>>>> main
+
+            $equipo = equipos::find($request->equipo_id);
+
+
             $equipo = equipo::find($request->equipo_id);
 
 
@@ -177,16 +177,16 @@ class EquipoController extends Controller
                return redirect()->action([EquipoController::class, 'index']);
             }
 
-<<<<<<< HEAD
-            $equipo->area_id = $request->area_id;
-=======
 
             $equipo->area_id = $request->area_id;
 
 
             $equipo->area_id = $request->area_id;
 
->>>>>>> main
+
+            $equipo->area_id = $request->area_id;
+
+
             $equipo->company_id = $request->area_id;
 
             $equipo->campuses_id = $request->campuses_id;
