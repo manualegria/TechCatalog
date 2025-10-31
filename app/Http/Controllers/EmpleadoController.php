@@ -45,27 +45,35 @@ class EmpleadoController extends Controller
     public function search(Request $request)
     {
         $term = $request->get('term');
-        $users = User::where('first_name', 'like', "%$term%")
-                     ->orWhere('last_name', 'like', "%$term%")
-                     ->get(['id', 'first_name', 'last_name']);
-    
-        return response()->json(
-            $users->map(function ($user) {
-                return [
-                    'label' => $user->first_name . ' ' . $user->last_name,
-                    'value' => $user->first_name . ' ' . $user->last_name
-                ];
-            })
-        );
-    }
+
+        $empleados = Empleado::where('nombres', 'LIKE', "%.$term.%")
+                            ->orWhere('apellidos', 'LIKE', "%.$term.%")
+                            ->get();
+
+        $results = [];
+        foreach (Employees as $employee){
+
+            $results[] = [
+                'id' => $employee->id,
+                'nombres' => $employee->nombres,
+                'apellidos' => $employee->apellidos,
+                'correo_corporativo' => $employee->correo_corporativo,
+                'label' => $employee->nombres . ' ' . $employee->apellidos,
+                'value' => $employee->nombres
+            ];
+        }
+
+        return response()->json($results);
+         
+}
     
     
 
     public function create(){
 
-        
-        $empleado = Empleado::all();
-        return view('employee.create', [ 'employees' => $empleado]);
+        $roles = Role::all();
+        $empleados = Empleado::all();
+        return view('employee.create', [ 'roles' => $roles,'employees' => $empleados]);
 
 
     }
@@ -413,6 +421,17 @@ public function import(Request $request)
     }
 }
 
+
+public function getEmpleado($id)
+{
+    $empleado = Empleado::findOrFail($id);
+    return response()->json([
+        'nombres' => $empleado->nombres,
+        'apellidos' => $empleado->apellidos,
+        'correo_corporativo' => $empleado->correo_corporativo,
+        'cedula' => $empleado->cedula
+    ]);
+}
 
 
 

@@ -38,6 +38,8 @@ Route::get('/employees/edit/{id}', [EmpleadoController::class, 'edit'])
      ->name('employees.search')
      ->middleware(AuthorizedMiddleware::class . ':Empleados.searchEmployees');
 
+     Route::get('/empleados/{id}', [EmpleadoController::class, 'getEmpleado']);
+
 
 // Rutas para importación desde Excel
 // Route::get('/employees/import', [EmpleadoController::class, 'showImportForm'])

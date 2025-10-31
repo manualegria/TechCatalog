@@ -1,4 +1,4 @@
-<!-- <?php
+ <?php
 
 namespace App\Http\Controllers;
 
@@ -39,7 +39,13 @@ class UsersController extends Controller
     public function create() {
 
         $roles = Role::all();
-        return view('users.create', ['roles' => $roles]);
+        $empleados = empleado::all();
+        return view('users.create', [
+            'roles' => $roles,
+            'empleados' => $empleados
+        ]);
+
+        //return view('users.create', ['roles' => $roles]);
     }
 
     public function edit($id) {

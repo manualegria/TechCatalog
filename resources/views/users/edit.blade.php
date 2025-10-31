@@ -69,6 +69,14 @@
                         </div>
                     </div>
 
+                    <div class="col-md-6">
+                    <div class="form-floating">
+                        <input type="password" name="password" class="form-control" 
+                               placeholder="Password" required>
+                        <label>Password</label>
+                    </div>
+                </div>
+
                 </form>
 
             </div>
